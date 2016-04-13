@@ -86,7 +86,6 @@
             android:onClick="switchCamera"
             android:background="@drawable/camera_switch_button"
             android:padding="10dp"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"/>
     </LinearLayout>
     <View
