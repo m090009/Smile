@@ -10,6 +10,7 @@
  * The camera will take your picture with a lovely animation and display it to you.
  * Then you can either take other pictures or go back and enjoy your smile in your smiles mosaic or even in your gallery.
  PS: Make sure you are close enough to the device when smiling and have fun
+
 ##Snapshots:
 
 <img src="https://raw.githubusercontent.com/m090009/Smile/master/ScreenShots/Screenshot_20160413-212923.jpg" 
