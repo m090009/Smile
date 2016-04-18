@@ -1,5 +1,5 @@
 # Smile
- Capture your beautiful smiles and view them in a aesthetically pleasing images mosaic view with Smile, it captures and saves your image when you smile. Smile can detect more than one smile, so gather your friends and have fun with it.
+ Capture your beautiful smiles and view them in an aesthetically pleasing mosaic view with Smile, it captures and saves your image when you smile. Smile can detect more than one smile, so gather your friends and have fun with it.
  
  
 
