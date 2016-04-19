@@ -12,4 +12,5 @@
     <string name="dialog_ok">Ok</string>
     <string name="isOperational_snackbar_title">Some google components are being downloaded</string>
     <string name="isOperational_snackbar_action">BACK</string>
+    <string name="emptyMosaicText">No Smiles, no problem.\nClick on the smiley button below\nand let\'s make some amazing smiles</string>
 </resources>

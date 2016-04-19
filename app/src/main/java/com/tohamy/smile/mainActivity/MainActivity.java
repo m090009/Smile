@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Canvas;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.media.FaceDetector;
 import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
@@ -18,6 +19,8 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.view.Display;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.tohamy.smile.faceTrackerActivity.FaceTrackerActivity;
 import com.tohamy.smile.mainActivity.Interfaces.FetchAlbumAndImagesInterface;
@@ -45,6 +48,8 @@ public class MainActivity extends AppCompatActivity
     private SmilesRecyclerView smilesRecyclerView;
     private TwoWayView mosaicView;
     private MosaicLayoutAdapter mosaicLayoutAdapter;
+    private LinearLayout emptyMosaicView;
+    private TextView emptyMosaicText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +84,8 @@ public class MainActivity extends AppCompatActivity
                 , new ArrayList<Item>()
                 , getBlockSize());
         this.mosaicView.setAdapter(this.mosaicLayoutAdapter);
+        this.emptyMosaicView = (LinearLayout) findViewById(R.id.emptyMosaicView);
+        this.emptyMosaicText = (TextView) findViewById(R.id.emptyMosaicText);
         setupTwoWayView();
     }
 
@@ -133,7 +140,19 @@ public class MainActivity extends AppCompatActivity
         ArrayList<Item> smileImages = MediaStoreOperations
                 .getSmileAlbumFromCursor(cur);
         this.mosaicLayoutAdapter.repopulate(smileImages);
+        if(smileImages.size() == 0){
+            onEmptyMosaicView();
+        }else{
+            this.emptyMosaicView.setVisibility(View.INVISIBLE);
+        }
 //        this.smilesRecyclerView.populate(galleryItems);
+    }
+
+    public void onEmptyMosaicView(){
+        Typeface tf = Typeface.createFromAsset(getAssets()
+                ,"fonts/KGBehindTheseHazelEyes.ttf");
+        this.emptyMosaicText.setTypeface(tf);
+        this.emptyMosaicView.setVisibility(View.VISIBLE);
     }
 
     @Override

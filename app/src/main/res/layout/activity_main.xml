@@ -23,14 +23,7 @@
         android:background="@drawable/background_view"
         android:visibility="invisible">
     </View>
-    <ImageView
-        android:id="@+id/smileImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_tag_faces_black_48dp"
-        android:layout_gravity="center"
-        android:visibility="invisible"
-        />
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -45,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_sentiment_very_satisfied_white_36dp"/>
+        android:src="@drawable/ic_sentiment_very_satisfied_black_48dp"/>
     <org.lucasr.twowayview.widget.TwoWayView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/mosaicView"
@@ -59,5 +52,32 @@
         app:twowayview_numColumns="3"
         app:twowayview_numRows="3"
         android:background="#ffffff"/>
+    <LinearLayout
+        android:id="@+id/emptyMosaicView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        >
+        <ImageView
+            android:id="@+id/smileImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_tag_faces_black_48dp"
+            android:layout_gravity="center"
+            android:alpha="0.7"
+            />
+        <TextView
+            android:id="@+id/emptyMosaicText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@string/emptyMosaicText"
+            android:textSize="20sp"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>
